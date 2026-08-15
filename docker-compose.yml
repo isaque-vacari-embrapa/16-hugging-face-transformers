@@ -1,0 +1,83 @@
+# Execução do playground em contêiner.
+#
+#     docker compose up -d --build                 # CPU, http://localhost:8501
+#     docker compose up -d --build playground-gpu  # GPU, http://localhost:8502
+#     docker compose down --remove-orphans
+#
+# Nomear o serviço já habilita o perfil `gpu`; `--profile gpu up` sobe os
+# dois de uma vez, e é por isso que cada um tem a sua porta.
+#
+# A imagem é autossuficiente: traz o ambiente completo, o PTT5 ajustado, os
+# adaptadores LoRA do Gaia e o checkpoint base do Gemma 3 de que eles
+# dependem. Nenhum volume é necessário e o contêiner sobe sem rede — o que
+# pode ser verificado com `docker run --network none`.
+#
+# São dois serviços porque a variante muda o que é instalado na imagem, e
+# não apenas como o contêiner sobe: a quantização em 4 bits do Gemma exige
+# o runtime CUDA, que só está presente na imagem construída com
+# `TORCH_VARIANT=cuda`. Medido nesta máquina, com 32 tokens gerados:
+# 1,68 token/s na variante de CPU contra 8,81 na de GPU.
+
+x-playground: &playground
+  image: qa-embrapa-playground:cpu
+  build: &playground-build
+    context: .
+    dockerfile: Dockerfile
+    args:
+      # Origem dos pesos base do Gemma 3 na construção da imagem:
+      #
+      #   hub      baixa do Hugging Face Hub (~8 GB de tráfego, ~5 min);
+      #   context  copia do cache do hospedeiro — mais rápido para quem já
+      #            tem o checkpoint. Exige descomentar `additional_contexts`
+      #            nos dois serviços. O caminho é lido em `HF_CACHE_DIR`, ou
+      #            `~/.cache/huggingface` por padrão.
+      GEMMA_SOURCE: ${GEMMA_SOURCE:-hub}
+      TORCH_VARIANT: cpu
+    # additional_contexts:
+    #   hfcache: ${HF_CACHE_DIR:-${HOME}/.cache/huggingface}
+  environment: &playground-env
+    # Deixe vazio para reativar o MLflow (exige o volume ./mlflow abaixo).
+    QA_EMBRAPA_NO_MLFLOW: "1"
+    # A imagem opera offline por padrão, com o cache de modelos embutido.
+    # Ponha "0" para permitir o download de outros checkpoints do Hub.
+    HF_HUB_OFFLINE: "1"
+  # volumes:
+  #   # Rastreamento do MLflow. Descomente junto com QA_EMBRAPA_NO_MLFLOW=""
+  #   # para que a aba "MLflow" e a origem de pesos por Model Registry
+  #   # funcionem dentro do contêiner.
+  #   - ./mlflow:/app/mlflow
+  restart: unless-stopped
+
+services:
+  # Padrão: roda em qualquer máquina, sem GPU.
+  playground:
+    <<: *playground
+    container_name: qa-embrapa-playground
+    ports:
+      - "${PLAYGROUND_PORT:-8501}:8501"
+
+  # `docker compose up -d playground-gpu`: exige o NVIDIA Container Toolkit.
+  playground-gpu:
+    <<: *playground
+    profiles: ["gpu"]
+    container_name: qa-embrapa-playground-gpu
+    image: qa-embrapa-playground:cuda
+    ports:
+      - "${PLAYGROUND_GPU_PORT:-8502}:8501"
+    build:
+      <<: *playground-build
+      args:
+        GEMMA_SOURCE: ${GEMMA_SOURCE:-hub}
+        TORCH_VARIANT: cuda
+    environment:
+      <<: *playground-env
+      # A GPU de referência tem 8 GB; a alocação expansível reduz a
+      # fragmentação entre carregamentos sucessivos de modelo.
+      PYTORCH_CUDA_ALLOC_CONF: expandable_segments:True
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

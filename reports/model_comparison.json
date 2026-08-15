@@ -1,0 +1,440 @@
+{
+  "reference_preset": "beam_search",
+  "quality_weights": {
+    "rougeL": 0.35,
+    "rouge1": 0.25,
+    "chrf": 0.25,
+    "rouge2": 0.1,
+    "bleu": 0.05
+  },
+  "models": [
+    {
+      "key": "ptt5",
+      "label": "PTT5 v2 base",
+      "checkpoint": "unicamp-dl/ptt5-v2-base",
+      "family": "seq2seq",
+      "parameters": "223M",
+      "strategy": "ajuste-completo",
+      "test_examples": 200,
+      "training": {
+        "elapsed_seconds": 1980.0,
+        "epochs": 5.0,
+        "trainable_parameters": 222903552,
+        "total_parameters": 222903552,
+        "validation_loss": 2.7047
+      },
+      "reference_preset": "beam_search",
+      "quality": {
+        "rouge1": 25.68,
+        "rouge2": 8.36,
+        "rougeL": 18.73,
+        "bleu": 1.43,
+        "chrf": 17.05
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.726,
+        "longest_copied_span_mean": 5.3,
+        "longest_copied_span_max": 13,
+        "distinct_1": 0.216,
+        "distinct_2": 0.613,
+        "self_repetition_4gram_mean": 0.003
+      },
+      "length": {
+        "words_mean": 30.9,
+        "words_min": 7,
+        "words_max": 84,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 44.5,
+        "seconds_per_answer": 0.22
+      },
+      "presets": {
+        "beam_search": {
+          "quality": {
+            "rouge1": 25.68,
+            "rouge2": 8.36,
+            "rougeL": 18.73,
+            "bleu": 1.43,
+            "chrf": 17.05
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.726,
+            "longest_copied_span_mean": 5.3,
+            "longest_copied_span_max": 13,
+            "distinct_1": 0.216,
+            "distinct_2": 0.613,
+            "self_repetition_4gram_mean": 0.003
+          },
+          "length": {
+            "words_mean": 30.9,
+            "words_min": 7,
+            "words_max": 84,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 44.5,
+            "seconds_per_answer": 0.22
+          }
+        },
+        "beam_search_curto": {
+          "quality": {
+            "rouge1": 23.84,
+            "rouge2": 8.21,
+            "rougeL": 18.01,
+            "bleu": 0.73,
+            "chrf": 14.46
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.719,
+            "longest_copied_span_mean": 5.1,
+            "longest_copied_span_max": 13,
+            "distinct_1": 0.244,
+            "distinct_2": 0.647,
+            "self_repetition_4gram_mean": 0.002
+          },
+          "length": {
+            "words_mean": 23.7,
+            "words_min": 7,
+            "words_max": 59,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 42.7,
+            "seconds_per_answer": 0.21
+          }
+        },
+        "greedy": {
+          "quality": {
+            "rouge1": 23.95,
+            "rouge2": 6.84,
+            "rougeL": 17.39,
+            "bleu": 1.58,
+            "chrf": 16.89
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.777,
+            "longest_copied_span_mean": 5.0,
+            "longest_copied_span_max": 10,
+            "distinct_1": 0.217,
+            "distinct_2": 0.613,
+            "self_repetition_4gram_mean": 0.002
+          },
+          "length": {
+            "words_mean": 33.1,
+            "words_min": 7,
+            "words_max": 96,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 37.0,
+            "seconds_per_answer": 0.19
+          }
+        },
+        "amostragem_criativa": {
+          "quality": {
+            "rouge1": 25.83,
+            "rouge2": 6.06,
+            "rougeL": 17.19,
+            "bleu": 1.92,
+            "chrf": 20.98
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.831,
+            "longest_copied_span_mean": 4.9,
+            "longest_copied_span_max": 10,
+            "distinct_1": 0.208,
+            "distinct_2": 0.672,
+            "self_repetition_4gram_mean": 0.001
+          },
+          "length": {
+            "words_mean": 46.5,
+            "words_min": 8,
+            "words_max": 124,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 45.7,
+            "seconds_per_answer": 0.23
+          }
+        }
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "A taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas varia de acordo com o tipo de solo, a época de plantio e a cultivar.",
+          "novel_4gram_ratio": 0.536
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "As iscas tipo queijo são confeccionadas a partir de uma mistura de farinha de mandioca com farinha de milho e farinha de mandioca. A mistura de farinha com farinha de mandioca e farinha de milho é feita a partir de um copo de água destilada em temperatura de 20 o C.",
+          "novel_4gram_ratio": 0.792
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "A aveia e o milheto devem ser semeados em sacos de plástico ou em sacos plásticos. A aveia pode ser semeada em sacolas plásticas ou em sacola plástica.",
+          "novel_4gram_ratio": 0.72
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "A varíola ou pinta-preta é uma doença causada por fungos que atacam as folhas do mamoeiro.",
+          "novel_4gram_ratio": 0.714
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "A taxa de retorno simples é a diferença entre a taxa de retorno do investimento e a taxa de rentabilidade do capital investido. A taxa simples é calculada com base na taxa de retorno de um investimento, ou seja, é o valor do investimento investido em um determinado período de tempo. O valor da taxa simples é o valor da taxa de retorno total do investimento.",
+          "novel_4gram_ratio": 0.857
+        }
+      ]
+    },
+    {
+      "key": "gaia",
+      "label": "Gemma 3 Gaia PT-BR 4b it",
+      "checkpoint": "CEIA-UFG/Gemma-3-Gaia-PT-BR-4b-it",
+      "family": "causal",
+      "parameters": "4,3B",
+      "strategy": "lora-4bit",
+      "test_examples": 200,
+      "training": {
+        "elapsed_seconds": 15677.5,
+        "epochs": 1.0,
+        "trainable_parameters": 29802496,
+        "total_parameters": 2520025456,
+        "validation_loss": 1.8843
+      },
+      "reference_preset": "beam_search",
+      "quality": {
+        "rouge1": 25.09,
+        "rouge2": 7.12,
+        "rougeL": 17.68,
+        "bleu": 1.54,
+        "chrf": 18.24
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.746,
+        "longest_copied_span_mean": 5.3,
+        "longest_copied_span_max": 12,
+        "distinct_1": 0.265,
+        "distinct_2": 0.717,
+        "self_repetition_4gram_mean": 0.0
+      },
+      "length": {
+        "words_mean": 32.3,
+        "words_min": 9,
+        "words_max": 123,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 1064.2,
+        "seconds_per_answer": 5.32
+      },
+      "presets": {
+        "beam_search": {
+          "quality": {
+            "rouge1": 25.09,
+            "rouge2": 7.12,
+            "rougeL": 17.68,
+            "bleu": 1.54,
+            "chrf": 18.24
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.746,
+            "longest_copied_span_mean": 5.3,
+            "longest_copied_span_max": 12,
+            "distinct_1": 0.265,
+            "distinct_2": 0.717,
+            "self_repetition_4gram_mean": 0.0
+          },
+          "length": {
+            "words_mean": 32.3,
+            "words_min": 9,
+            "words_max": 123,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 1064.2,
+            "seconds_per_answer": 5.32
+          }
+        },
+        "beam_search_curto": {
+          "quality": {
+            "rouge1": 23.68,
+            "rouge2": 6.97,
+            "rougeL": 17.14,
+            "bleu": 1.05,
+            "chrf": 16.34
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.728,
+            "longest_copied_span_mean": 5.1,
+            "longest_copied_span_max": 12,
+            "distinct_1": 0.282,
+            "distinct_2": 0.73,
+            "self_repetition_4gram_mean": 0.0
+          },
+          "length": {
+            "words_mean": 27.4,
+            "words_min": 8,
+            "words_max": 123,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 1057.9,
+            "seconds_per_answer": 5.29
+          }
+        },
+        "greedy": {
+          "quality": {
+            "rouge1": 26.81,
+            "rouge2": 5.71,
+            "rougeL": 16.58,
+            "bleu": 1.86,
+            "chrf": 27.26
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.867,
+            "longest_copied_span_mean": 4.9,
+            "longest_copied_span_max": 12,
+            "distinct_1": 0.221,
+            "distinct_2": 0.708,
+            "self_repetition_4gram_mean": 0.0
+          },
+          "length": {
+            "words_mean": 58.5,
+            "words_min": 12,
+            "words_max": 134,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 1144.8,
+            "seconds_per_answer": 5.72
+          }
+        },
+        "amostragem_criativa": {
+          "quality": {
+            "rouge1": 24.99,
+            "rouge2": 4.49,
+            "rougeL": 13.97,
+            "bleu": 1.68,
+            "chrf": 31.95
+          },
+          "originality": {
+            "novel_4gram_ratio_mean": 0.917,
+            "longest_copied_span_mean": 4.9,
+            "longest_copied_span_max": 11,
+            "distinct_1": 0.188,
+            "distinct_2": 0.719,
+            "self_repetition_4gram_mean": 0.0
+          },
+          "length": {
+            "words_mean": 101.2,
+            "words_min": 5,
+            "words_max": 191,
+            "empty_answers": 0
+          },
+          "cost": {
+            "seconds_total": 1894.0,
+            "seconds_per_answer": 9.47
+          }
+        }
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "Nas colheitas manuais, as perdas de grãos variam de 10% a 15%. Nas colheitas mecanizadas, a perda é de 2% a 4%.",
+          "novel_4gram_ratio": 0.895
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "As iscas do tipo queijo são preparadas a partir de pedaços de casca de banana, que são cortados em pequenos cubos, colocados em bandejas e cobertos com uma mistura de terra e esterco de gado. As iscas são colocadas em canteiros e deixadas para secar ao sol. Depois de secas, as iscas são cobertas com uma camada de terra e adubo orgânico.",
+          "novel_4gram_ratio": 0.847
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "A aveia e o milheto podem ser semeados em sulcos ou em covas, com espaçamento de 15 cm entre fileiras e de 10 cm entre plantas dentro da fileira. As sementes devem ser distribuídas uniformemente no sulco ou na cova, a uma profundidade de 2 cm.",
+          "novel_4gram_ratio": 0.698
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "A varíola-do-mamoeiro, causada pelo vírus-da-varíola-dos-frutos (FPV), é uma doença de importância econômica para a cultura do mamoeiro. O FPV é transmitido por pulgões, que se alimentam da seiva das plantas infectadas. Os sintomas da doença aparecem 15 a 20 dias após a infecção. As folhas infectadas tornam-se amareladas, murcham e caem. Os frutos infectados apresentam manchas escuras, que evoluem para áreas necróticas, tornando-os inadequados para comercialização.",
+          "novel_4gram_ratio": 0.746
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "Taxa de retorno simples é a diferença entre o preço de venda do produto e o custo de produção.",
+          "novel_4gram_ratio": 0.438
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "ptt5": {
+      "modelo": "PTT5 v2 base",
+      "parametros": "223M",
+      "estrategia": "ajuste-completo",
+      "indice_qualidade": 18.15,
+      "rougeL": 18.73,
+      "rouge1": 25.68,
+      "rouge2": 8.36,
+      "bleu": 1.43,
+      "chrf": 17.05,
+      "4gramas_ineditos": 0.726,
+      "maior_trecho_copiado": 5.3,
+      "palavras_media": 30.9,
+      "segundos_por_resposta": 0.22,
+      "treino_minutos": 33.0
+    },
+    "gaia": {
+      "modelo": "Gemma 3 Gaia PT-BR 4b it",
+      "parametros": "4,3B",
+      "estrategia": "lora-4bit",
+      "indice_qualidade": 17.81,
+      "rougeL": 17.68,
+      "rouge1": 25.09,
+      "rouge2": 7.12,
+      "bleu": 1.54,
+      "chrf": 18.24,
+      "4gramas_ineditos": 0.746,
+      "maior_trecho_copiado": 5.3,
+      "palavras_media": 32.3,
+      "segundos_por_resposta": 5.32,
+      "treino_minutos": 261.3
+    }
+  },
+  "recommendation": {
+    "criterion": "índice de qualidade agregado na melhor decodificação de cada modelo, com o custo de inferência como desempate",
+    "per_preset_winners": {
+      "amostragem_criativa": "gaia",
+      "beam_search": "ptt5",
+      "beam_search_curto": "gaia",
+      "greedy": "gaia"
+    },
+    "key": "gaia",
+    "label": "Gemma 3 Gaia PT-BR 4b it",
+    "quality_index": 19.98,
+    "preset": "greedy",
+    "runner_up": "ptt5",
+    "cost_ratio": 24.9,
+    "reason": "maior índice de qualidade agregado na melhor configuração de cada um (19.98 em `greedy` contra 18.42 de PTT5 v2 base em `amostragem_criativa`, +1.56), ao custo de 25× mais tempo por resposta"
+  }
+}

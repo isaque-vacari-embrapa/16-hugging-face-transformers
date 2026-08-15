@@ -1,0 +1,46 @@
+# Contexto de construção da imagem.
+#
+# O objetivo é levar para a imagem apenas o que o playground precisa em
+# tempo de execução: o código, os pesos ajustados, o conjunto processado
+# (respostas de referência e sorteio de perguntas) e os relatórios que
+# alimentam as abas "Avaliação" e "Comparação".
+
+# Controle de versão e ferramentas
+.git/
+.gitignore
+.github/
+.claude/
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+**/__pycache__/
+**/*.py[cod]
+
+# Ambientes virtuais locais
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Dados de entrada e intermediários: 174 MB usados apenas pelo pipeline de
+# conversão/extração, que não roda dentro da imagem do playground.
+data/raw/
+data/interim/
+
+# Rastreamento local do MLflow (3,5 GB). Quem quiser as versões do Model
+# Registry monta o diretório como volume — ver docker-compose.yml.
+mlflow/
+mlruns/
+
+# Checkpoints intermediários do treino (2,7 GB). Os pesos finais ficam na
+# raiz de cada diretório de modelo e esses, sim, entram na imagem.
+models/*/checkpoints/
+
+# Testes e material auxiliar não usados em execução
+tests/
+assets/
+docker-compose.yml
+Dockerfile
+.dockerignore

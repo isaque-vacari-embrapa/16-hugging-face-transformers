@@ -1,0 +1,36 @@
+{
+  "train": {
+    "examples": 7511,
+    "topics": 20
+  },
+  "validation": {
+    "examples": 884,
+    "topics": 20
+  },
+  "test": {
+    "examples": 442,
+    "topics": 19
+  },
+  "topics": [
+    "Abacaxi",
+    "Algodão",
+    "Arroz",
+    "Banana",
+    "Caju",
+    "Caprinos e Ovinos de Corte",
+    "Citros",
+    "Coco",
+    "Feijão",
+    "Feijão-Caupi",
+    "Gado de Leite",
+    "Hortas",
+    "Mamona",
+    "Mamão",
+    "Mandioca",
+    "Milho",
+    "Produção Orgânica de Hortaliças",
+    "Sementes",
+    "Sistema Plantio Direto",
+    "Soja"
+  ]
+}

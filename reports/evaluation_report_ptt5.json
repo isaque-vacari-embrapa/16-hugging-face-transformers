@@ -1,0 +1,289 @@
+{
+  "model": "/home/m320118/apps/git/fiap/16-hugging-face-transformers/models/ptt5-qa-embrapa",
+  "model_key": "ptt5",
+  "model_label": "PTT5 v2 base",
+  "base_model": "unicamp-dl/ptt5-v2-base",
+  "family": "seq2seq",
+  "parameters": "223M",
+  "fine_tuned": true,
+  "test_examples": 200,
+  "presets": {
+    "beam_search": {
+      "generation": {
+        "do_sample": false,
+        "num_beams": 4,
+        "length_penalty": 1.3
+      },
+      "quality": {
+        "rouge1": 25.68,
+        "rouge2": 8.36,
+        "rougeL": 18.73,
+        "bleu": 1.43,
+        "chrf": 17.05
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.726,
+        "longest_copied_span_mean": 5.3,
+        "longest_copied_span_max": 13,
+        "distinct_1": 0.216,
+        "distinct_2": 0.613,
+        "self_repetition_4gram_mean": 0.003
+      },
+      "length": {
+        "words_mean": 30.9,
+        "words_min": 7,
+        "words_max": 84,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 44.5,
+        "seconds_per_answer": 0.22
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "A taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas varia de acordo com o tipo de solo, a época de plantio e a cultivar.",
+          "novel_4gram_ratio": 0.536
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "As iscas tipo queijo são confeccionadas a partir de uma mistura de farinha de mandioca com farinha de milho e farinha de mandioca. A mistura de farinha com farinha de mandioca e farinha de milho é feita a partir de um copo de água destilada em temperatura de 20 o C.",
+          "novel_4gram_ratio": 0.792
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "A aveia e o milheto devem ser semeados em sacos de plástico ou em sacos plásticos. A aveia pode ser semeada em sacolas plásticas ou em sacola plástica.",
+          "novel_4gram_ratio": 0.72
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "A varíola ou pinta-preta é uma doença causada por fungos que atacam as folhas do mamoeiro.",
+          "novel_4gram_ratio": 0.714
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "A taxa de retorno simples é a diferença entre a taxa de retorno do investimento e a taxa de rentabilidade do capital investido. A taxa simples é calculada com base na taxa de retorno de um investimento, ou seja, é o valor do investimento investido em um determinado período de tempo. O valor da taxa simples é o valor da taxa de retorno total do investimento.",
+          "novel_4gram_ratio": 0.857
+        }
+      ]
+    },
+    "beam_search_curto": {
+      "generation": {
+        "do_sample": false,
+        "num_beams": 4,
+        "length_penalty": 1.0
+      },
+      "quality": {
+        "rouge1": 23.84,
+        "rouge2": 8.21,
+        "rougeL": 18.01,
+        "bleu": 0.73,
+        "chrf": 14.46
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.719,
+        "longest_copied_span_mean": 5.1,
+        "longest_copied_span_max": 13,
+        "distinct_1": 0.244,
+        "distinct_2": 0.647,
+        "self_repetition_4gram_mean": 0.002
+      },
+      "length": {
+        "words_mean": 23.7,
+        "words_min": 7,
+        "words_max": 59,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 42.7,
+        "seconds_per_answer": 0.21
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "A taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas varia de acordo com o tipo de solo, a época de plantio e a cultivar.",
+          "novel_4gram_ratio": 0.536
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "As iscas tipo queijo são confeccionadas a partir de uma mistura de farinha de mandioca com farinha de milho.",
+          "novel_4gram_ratio": 0.75
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "A aveia e o milheto devem ser semeados em sacos de plástico ou em sacos plásticos.",
+          "novel_4gram_ratio": 0.615
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "A varíola ou pinta-preta é uma doença causada por fungos que atacam as folhas do mamoeiro.",
+          "novel_4gram_ratio": 0.714
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "A taxa de retorno simples é a diferença entre a taxa de retorno do investimento e a taxa de rentabilidade do capital investido. A taxa simples é calculada com base na taxa de retorno de um investimento, ou seja, é o valor do investimento em um determinado período de tempo.",
+          "novel_4gram_ratio": 0.809
+        }
+      ]
+    },
+    "greedy": {
+      "generation": {
+        "do_sample": false,
+        "num_beams": 1
+      },
+      "quality": {
+        "rouge1": 23.95,
+        "rouge2": 6.84,
+        "rougeL": 17.39,
+        "bleu": 1.58,
+        "chrf": 16.89
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.777,
+        "longest_copied_span_mean": 5.0,
+        "longest_copied_span_max": 10,
+        "distinct_1": 0.217,
+        "distinct_2": 0.613,
+        "self_repetition_4gram_mean": 0.002
+      },
+      "length": {
+        "words_mean": 33.1,
+        "words_min": 7,
+        "words_max": 96,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 37.0,
+        "seconds_per_answer": 0.19
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "A taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas é de aproximadamente 50%.",
+          "novel_4gram_ratio": 0.647
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "As iscas tipo queijo são confeccionadas a partir de restos de bananas, embalados em sacos plásticos de plástico ou de papelão, e depois de lavadas e secas.",
+          "novel_4gram_ratio": 0.833
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "A aveia e o milheto são sementes de porte médio, com diâmetro de 1 m a 2 m, e de porte baixo, com diâmetro médio de 2 m. A aveia é semeada em fileiras de 2 a 3 fileiras, com diâmetros de 2 a 4 cm. A averia é semeadora de porte médio e com diâmetro de 2 a 5 cm.",
+          "novel_4gram_ratio": 0.759
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "A varíola é causada por fungos que causam a doença.",
+          "novel_4gram_ratio": 0.857
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "A taxa de retorno simples é a taxa de retorno que o produtor recebe do produto, ou seja, o valor do investimento em determinado período de tempo. A taxa de rendimento simples é a que o produtor tem direito de receber do produto, independentemente de sua natureza.",
+          "novel_4gram_ratio": 0.886
+        }
+      ]
+    },
+    "amostragem_criativa": {
+      "generation": {
+        "do_sample": true,
+        "temperature": 0.8,
+        "top_p": 0.9,
+        "top_k": 50
+      },
+      "quality": {
+        "rouge1": 25.83,
+        "rouge2": 6.06,
+        "rougeL": 17.19,
+        "bleu": 1.92,
+        "chrf": 20.98
+      },
+      "originality": {
+        "novel_4gram_ratio_mean": 0.831,
+        "longest_copied_span_mean": 4.9,
+        "longest_copied_span_max": 10,
+        "distinct_1": 0.208,
+        "distinct_2": 0.672,
+        "self_repetition_4gram_mean": 0.001
+      },
+      "length": {
+        "words_mean": 46.5,
+        "words_min": 8,
+        "words_max": 124,
+        "empty_answers": 0
+      },
+      "cost": {
+        "seconds_total": 45.7,
+        "seconds_per_answer": 0.23
+      },
+      "examples": [
+        {
+          "topic": "Arroz",
+          "question": "Qual é a taxa de perda de grãos nas colheitas manual e mecanizada do arroz de terras altas?",
+          "reference": "Levantamentos realizados pela Embrapa Arroz e Feijão demonstram que as perdas de grãos na colheita são elevadas e influenciadas por diversos fatores relacionados principalmente ao método e ao momento de realização da colheita, à qualidade da operação das colhedoras e à cultivar. Num estudo realizado em diversas lavouras de arroz, constatou-se perda média de 186 kg/ha na colheita manual e de 326 kg/ha -1 na mecanizada.",
+          "generated": "Sim. Na colheita manual e mecanizada, a perda de grãos pode ser de até 75%, dependendo do tipo de arroz que se deseja plantar. Para sementes em solo arenoso ou em áreas de plantio de cultura, a perda deve ser de aproximadamente 65%.",
+          "novel_4gram_ratio": 0.725
+        },
+        {
+          "topic": "Banana",
+          "question": "Como são confeccionadas as iscas tipo queijo?",
+          "reference": "As iscas tipo queijo são preparadas cortando-se o pseudocaule a aproximadamente 30 cm do solo e, em seguida, efetuando-se um novo corte, parcial ou total, à metade dessa altura, de modo que a parte superior fique ligada à porção inferior por meio da bainha (corte parcial) ou simplesmente sobre a porção inferior (corte total).",
+          "generated": "O queijo é fabricado de forma a estimular a produção de iscas tipo queijo, que são obtentoras de proteínas para produção de proteínas, que são insaturadas, e utilizadas como alimento. As iscas tipo leite são produzidas com amido de milho e sorgo, de sabor cítrico, de cor marrom-acinzentada, de cor vermelha-escura e de sabor ácido, e de cor amarelada.",
+          "novel_4gram_ratio": 0.966
+        },
+        {
+          "topic": "Sistema Plantio Direto",
+          "question": "Qual a quantidade de sementes e qual a forma de semeadura de aveia e milheto mais adequada ao SPD?",
+          "reference": "A quantidade de sementes a utilizar é variável em função do percentual de germinação das sementes, do método de semeadura, da finalidade do cultivo e das condições climáticas. De modo geral, a semeadura em linha é a mais adequada, mas em alguns casos específicos, a semeadura a lanço pode ser utilizada, além da sobressemeadura na fase de maturação da soja. Para a aveia-preta, recomenda-se utilizar em torno de 60 a 80 kg/ha e para a aveia-branca, de 70 a 90 kg/ha. Na semeadura do milheto, utilizam-se de 15 a 20 kg/ha. Na semeadura a lanço, deve-se fazer um acréscimo de 20% na quantidade de sementes.",
+          "generated": "As sementes de aveia e milheto são colocadas sobre um solo com aproximadamente 10 cm de profundidade, em um terreno de 5 ha a 7 ha. Na semeadura de aveia, as sementes devem ser distribuídas no mínimo em dois terços do solo e retiradas dos primeiros 50%, após o plantio. No caso de sementes de milheto, deve-se utilizar a semeadura na profundidade de 15 cm a 20 cm.",
+          "novel_4gram_ratio": 0.803
+        },
+        {
+          "topic": "Mamão",
+          "question": "Quais os problemas provocados pela varíola ou pinta-preta?",
+          "reference": "O grande número de lesões causa aspecto desagradável no fruto e resulta em sua desvalorização comercial, mas não chega a atingir a polpa.",
+          "generated": "Os sintomas da varíola ou pinta-preta são: Aparecimento de lesões na casca, principalmente no interior do fruto.",
+          "novel_4gram_ratio": 0.933
+        },
+        {
+          "topic": "Produção Orgânica de Hortaliças",
+          "question": "O que é taxa de retorno simples?",
+          "reference": "A taxa de retorno simples é um indicador de rentabilidade dos recursos aplicados no processo produtivo em determinado período de tempo. A taxa de retorno gera um resultado percentual que é obtido pela razão entre a renda líquida e os custos totais multiplicada por 100. Entretanto, no caso da agricultura orgânica, é desejável que se aplique um modelo intertemporal para realizar a análise dos investimentos. Como os processos produtivos orgânicos são um conjunto harmônico entre homem, natureza e plantas, num primeiro momento o produtor faz investimentos na infraestrutura produtiva e no meio ambiente, e, em períodos subseqüentes, o meio ambiente retorna ao produtor os tratamentos recebidos na forma de incrementos sucessivos de rentabilidade das culturas.",
+          "generated": "Sim. É a taxa de retorno que considera todos os investimentos realizados no país. É o preço pago ao produtor que, na prática, é o preço de venda do produto. É a remuneração paga aos produtores.",
+          "novel_4gram_ratio": 0.848
+        }
+      ]
+    }
+  },
+  "mlflow_run_id": "10525bb05b784e50b8199aa1e05a3783"
+}

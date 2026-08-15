@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Ferramentas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.claude/
+.flake8
+.vscode/
+
+# Artefatos reproduzíveis do pipeline
+# (regenerados por `poetry run qa-embrapa pipeline`)
+# porém foram excluídos para fins de deploy no Streamlit
+#data/interim/
+#data/processed/
+models/
+
+# Rastreamento local do MLflow: o banco e os artefatos são regenerados ao
+# reexecutar o pipeline, e o modelo empacotado passa de 890 MB.
+mlflow/
+mlruns/
+
+# Os relatórios em reports/ são entregáveis e ficam versionados.

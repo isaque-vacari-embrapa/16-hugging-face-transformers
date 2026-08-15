@@ -1,0 +1,437 @@
+{
+  "summary": {
+    "total": 8837,
+    "topics": 20,
+    "pairs_per_topic": {
+      "Abacaxi": 489,
+      "Algodão": 483,
+      "Arroz": 491,
+      "Banana": 470,
+      "Caju": 493,
+      "Caprinos e Ovinos de Corte": 489,
+      "Citros": 490,
+      "Coco": 471,
+      "Feijão": 475,
+      "Feijão-Caupi": 25,
+      "Gado de Leite": 493,
+      "Hortas": 490,
+      "Mamona": 496,
+      "Mamão": 479,
+      "Mandioca": 488,
+      "Milho": 492,
+      "Produção Orgânica de Hortaliças": 491,
+      "Sementes": 53,
+      "Sistema Plantio Direto": 485,
+      "Soja": 494
+    },
+    "question_words_mean": 11.3,
+    "question_words_max": 45,
+    "answer_words_mean": 80.5,
+    "answer_words_median": 66,
+    "answer_words_max": 749,
+    "repaired": 574,
+    "inferred_numbers": 1802
+  },
+  "per_file": [
+    {
+      "markdown_file": "abacaxi.md",
+      "topic_slug": "abacaxi",
+      "topic": "Abacaxi",
+      "headings_seen": 626,
+      "candidates": 547,
+      "accepted": 489,
+      "rejected_no_question_mark": 56,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 24,
+      "recovered_from_body": 13,
+      "inferred_numbers": 73,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "algodao.md",
+      "topic_slug": "algodao",
+      "topic": "Algodão",
+      "headings_seen": 569,
+      "candidates": 564,
+      "accepted": 483,
+      "rejected_no_question_mark": 66,
+      "rejected_short_question": 2,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 6,
+      "rejected_exhibit_only": 7,
+      "repaired_questions": 37,
+      "recovered_from_body": 36,
+      "inferred_numbers": 113,
+      "number_range": [
+        2,
+        500
+      ]
+    },
+    {
+      "markdown_file": "arroz.md",
+      "topic_slug": "arroz",
+      "topic": "Arroz",
+      "headings_seen": 637,
+      "candidates": 558,
+      "accepted": 491,
+      "rejected_no_question_mark": 65,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 25,
+      "recovered_from_body": 19,
+      "inferred_numbers": 92,
+      "number_range": [
+        1,
+        501
+      ]
+    },
+    {
+      "markdown_file": "banana.md",
+      "topic_slug": "banana",
+      "topic": "Banana",
+      "headings_seen": 531,
+      "candidates": 512,
+      "accepted": 470,
+      "rejected_no_question_mark": 36,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 6,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 19,
+      "recovered_from_body": 20,
+      "inferred_numbers": 46,
+      "number_range": [
+        2,
+        499
+      ]
+    },
+    {
+      "markdown_file": "caju.md",
+      "topic_slug": "caju",
+      "topic": "Caju",
+      "headings_seen": 666,
+      "candidates": 580,
+      "accepted": 493,
+      "rejected_no_question_mark": 83,
+      "rejected_short_question": 2,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 35,
+      "recovered_from_body": 18,
+      "inferred_numbers": 91,
+      "number_range": [
+        1,
+        501
+      ]
+    },
+    {
+      "markdown_file": "caprionos-e-ovinos-de-corte.md",
+      "topic_slug": "caprionos-e-ovinos-de-corte",
+      "topic": "Caprinos e Ovinos de Corte",
+      "headings_seen": 568,
+      "candidates": 549,
+      "accepted": 489,
+      "rejected_no_question_mark": 57,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 3,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 38,
+      "recovered_from_body": 37,
+      "inferred_numbers": 103,
+      "number_range": [
+        2,
+        500
+      ]
+    },
+    {
+      "markdown_file": "citros.md",
+      "topic_slug": "citros",
+      "topic": "Citros",
+      "headings_seen": 637,
+      "candidates": 567,
+      "accepted": 490,
+      "rejected_no_question_mark": 73,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 4,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 7,
+      "recovered_from_body": 7,
+      "inferred_numbers": 64,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "coco.md",
+      "topic_slug": "coco",
+      "topic": "Coco",
+      "headings_seen": 520,
+      "candidates": 531,
+      "accepted": 471,
+      "rejected_no_question_mark": 56,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 3,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 102,
+      "recovered_from_body": 88,
+      "inferred_numbers": 143,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "feijao-caupi.md",
+      "topic_slug": "feijao-caupi",
+      "topic": "Feijão-Caupi",
+      "headings_seen": 41,
+      "candidates": 36,
+      "accepted": 25,
+      "rejected_no_question_mark": 11,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 0,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 1,
+      "recovered_from_body": 1,
+      "inferred_numbers": 2,
+      "number_range": [
+        252,
+        276
+      ]
+    },
+    {
+      "markdown_file": "feijao.md",
+      "topic_slug": "feijao",
+      "topic": "Feijão",
+      "headings_seen": 632,
+      "candidates": 556,
+      "accepted": 475,
+      "rejected_no_question_mark": 78,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 48,
+      "recovered_from_body": 28,
+      "inferred_numbers": 72,
+      "number_range": [
+        1,
+        501
+      ]
+    },
+    {
+      "markdown_file": "gado-de-leite.md",
+      "topic_slug": "gado-de-leite",
+      "topic": "Gado de Leite",
+      "headings_seen": 662,
+      "candidates": 588,
+      "accepted": 493,
+      "rejected_no_question_mark": 89,
+      "rejected_short_question": 2,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 4,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 41,
+      "recovered_from_body": 21,
+      "inferred_numbers": 123,
+      "number_range": [
+        2,
+        500
+      ]
+    },
+    {
+      "markdown_file": "hortas.md",
+      "topic_slug": "hortas",
+      "topic": "Hortas",
+      "headings_seen": 617,
+      "candidates": 552,
+      "accepted": 491,
+      "rejected_no_question_mark": 55,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 5,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 3,
+      "recovered_from_body": 3,
+      "inferred_numbers": 58,
+      "number_range": [
+        1,
+        501
+      ]
+    },
+    {
+      "markdown_file": "mamao.md",
+      "topic_slug": "mamao",
+      "topic": "Mamão",
+      "headings_seen": 557,
+      "candidates": 534,
+      "accepted": 479,
+      "rejected_no_question_mark": 50,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 4,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 16,
+      "recovered_from_body": 16,
+      "inferred_numbers": 43,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "mamona.md",
+      "topic_slug": "mamona",
+      "topic": "Mamona",
+      "headings_seen": 610,
+      "candidates": 549,
+      "accepted": 497,
+      "rejected_no_question_mark": 49,
+      "rejected_short_question": 2,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 1,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 6,
+      "recovered_from_body": 6,
+      "inferred_numbers": 84,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "mandioca.md",
+      "topic_slug": "mandioca",
+      "topic": "Mandioca",
+      "headings_seen": 594,
+      "candidates": 536,
+      "accepted": 488,
+      "rejected_no_question_mark": 41,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 6,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 4,
+      "recovered_from_body": 4,
+      "inferred_numbers": 34,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "milho.md",
+      "topic_slug": "milho",
+      "topic": "Milho",
+      "headings_seen": 636,
+      "candidates": 572,
+      "accepted": 492,
+      "rejected_no_question_mark": 77,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 46,
+      "recovered_from_body": 44,
+      "inferred_numbers": 196,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "producao-organica-de-hortalicas.md",
+      "topic_slug": "producao-organica-de-hortalicas",
+      "topic": "Produção Orgânica de Hortaliças",
+      "headings_seen": 628,
+      "candidates": 567,
+      "accepted": 491,
+      "rejected_no_question_mark": 69,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 5,
+      "rejected_exhibit_only": 1,
+      "repaired_questions": 24,
+      "recovered_from_body": 24,
+      "inferred_numbers": 215,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "sementes.md",
+      "topic_slug": "sementes",
+      "topic": "Sementes",
+      "headings_seen": 67,
+      "candidates": 56,
+      "accepted": 53,
+      "rejected_no_question_mark": 3,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 0,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 5,
+      "recovered_from_body": 2,
+      "inferred_numbers": 6,
+      "number_range": [
+        147,
+        199
+      ]
+    },
+    {
+      "markdown_file": "sistema-plantio-direto.md",
+      "topic_slug": "sistema-plantio-direto",
+      "topic": "Sistema Plantio Direto",
+      "headings_seen": 625,
+      "candidates": 539,
+      "accepted": 485,
+      "rejected_no_question_mark": 49,
+      "rejected_short_question": 0,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 5,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 48,
+      "recovered_from_body": 28,
+      "inferred_numbers": 111,
+      "number_range": [
+        2,
+        501
+      ]
+    },
+    {
+      "markdown_file": "soja.md",
+      "topic_slug": "soja",
+      "topic": "Soja",
+      "headings_seen": 653,
+      "candidates": 591,
+      "accepted": 494,
+      "rejected_no_question_mark": 94,
+      "rejected_short_question": 1,
+      "rejected_long_question": 0,
+      "rejected_short_answer": 2,
+      "rejected_exhibit_only": 0,
+      "repaired_questions": 45,
+      "recovered_from_body": 25,
+      "inferred_numbers": 134,
+      "number_range": [
+        2,
+        501
+      ]
+    }
+  ]
+}
