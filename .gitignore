@@ -12,7 +12,6 @@ dist/
 .mypy_cache/
 .ruff_cache/
 .ipynb_checkpoints/
-.claude/
 .flake8
 .vscode/
 
